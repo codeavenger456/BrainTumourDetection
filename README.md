@@ -10,6 +10,7 @@ I can take the images and reformat the pixels to grayscale to reduce the size of
 I have also filter the images of the dataset to limit myself to the top view of the brain only.
 
 Question 1: the size of brain in each image is different?
+
 Question 2: some tumours appear as white, some tumours appear as black, kinda hard to identify tumours in various dataset?
 
 I look at some algorithms about image processing for grayscale or intensity, many suggests CNN (Convolutional Neural Network)
