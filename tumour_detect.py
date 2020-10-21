@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras import models, layers, optimizers
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import cv2
 
 nrows = 400
@@ -26,6 +26,7 @@ def read_and_resize_image(list_of_images):
             y.append(0)
     return X, y
 
+proportion = 0.8
 images = list()
 entries = os.listdir('.')
 for i in entries:
@@ -35,13 +36,13 @@ for i in entries:
             image = [i + '/' + j + '/' + k for k in dataset]
             images.extend(image)
 
-
-X, y = read_and_resize_image(images)
+images_train = images[:int(len(images) * proportion)]
+images_test = images[int(len(images) * proportion):]
+X, y = read_and_resize_image(images_train)
 X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.20, random_state=2)
 X_train = np.expand_dims(X_train, axis=0)
 y_train = np.asarray(y_train)
 y_val = np.asarray(y_val)
-print(X_train.shape)
 
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(nrows, ncolumns, channels)))
@@ -58,5 +59,5 @@ model.add(layers.Dense(512, activation='relu'))
 model.add(layers.Dense(1, activation='sigmoid'))
 model.summary()
 
-model.compile(loss='binary_crossentropy', optimizer=optimizers.RMSprop(), metrics=[tf.keras.metrics.FalsePositives()])
+model.compile(loss='binary_crossentropy', optimizer=optimizers.RMSprop(), metrics=[tf.keras.metrics.FalsePositives(name="falsePositive")])
 history = model.fit(X_train, y_train, epochs=10, validation_data=(X_val, y_val))
