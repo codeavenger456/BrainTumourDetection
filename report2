@@ -1,0 +1,13 @@
+# Report 2
+
+Right now, my CNN model performs around 80% accuracy to correctly predict the output (true positive and true negative)
+
+However, it has a 13% ~ 15% false positive rate which can be a bit problematic.
+
+Also the model is currently underfitting, so I will use data augmentation to generate more data in order to balance the datasets.
+
+I will also experience with some fully connected layers to avoid lossing information on images.
+
+I will probably use Django to deploy my website and to interact with users since I have some experience with Django.
+
+If time allows, I can add some features about giving information of a closest hospital near the users given the location or some elite hospital research centers.
