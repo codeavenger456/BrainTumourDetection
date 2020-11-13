@@ -6,6 +6,9 @@ However, it has a 13% ~ 15% false positive rate which can be a bit problematic.
 
 I used False Positive metric to measure the performance of the model, but it gives a worse result, so I will stick with accuracy metric.
 
+I used RMSprop optimizer in my model, while training, validation training always has a major drop,
+  so I change it to adam optimizer, it is more stable and performs slightly better than the previous optimizer.
+
 Also the model is currently underfitting, so I will use data augmentation to generate more data in order to balance the datasets.
 
 I will also experience with some fully connected layers to avoid lossing information on images.
