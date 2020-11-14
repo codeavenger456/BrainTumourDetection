@@ -9,9 +9,7 @@ I used False Positive metric to measure the performance of the model, but it giv
 I used RMSprop optimizer in my model, while training, validation training always has a major drop,
   so I change it to adam optimizer, it is more stable and performs slightly better than the previous optimizer.
 
-Also the model is currently underfitting, so I will use data augmentation to generate more data in order to balance the datasets.
-
-I will also experience with some fully connected layers to avoid lossing information on images.
+Since the model is overfitting, I add BatchNormalization layers to my VGG architecture also reduce epochs to 4 to avoid further learning.
 
 I will probably use Django to deploy my website and to interact with users since I have some experience with Django.
 
