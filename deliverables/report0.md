@@ -1,4 +1,4 @@
-# BrainTumourDetection
+# Report 0
 Image classification based on brain tumour scans
 
 This is a project about detecting if there is a tumor in the brain given the MRI scan. 
