@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block button %}
+    <form method="post" enctype="multipart/form-data" action="/outcome/">
+        {% csrf_token %}
+        <input type="file" name="mri-scan">
+        <button type="submit" class="w3-button w3-round w3-white" style="position: center">Submit</button>
+    </form>
+{% endblock %}
