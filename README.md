@@ -11,3 +11,5 @@ To run the django project:
 4. python manage.py runserver
 
 The website will be deployed from the above steps and just follow the instructions in the website after.
+
+The colab file is in deliverables if you want to see the construction of the model.
