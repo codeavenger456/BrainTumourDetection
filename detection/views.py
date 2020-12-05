@@ -1,11 +1,9 @@
 from django.shortcuts import render
-import cv2
 import io
 from tensorflow.keras import models
 import numpy as np
 from PIL import Image
 from tensorflow.keras.preprocessing.image import img_to_array
-from tensorflow.keras.applications import imagenet_utils
 # Create your views here.
 
 def index(request):
